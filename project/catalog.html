@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>HTML Academy: Седона</title>
+    <link rel="stylesheet" href="styles/styles.css">
   </head>
   <body>
    <header class="main-header">
@@ -23,37 +24,42 @@
        </ul>
       <ul class="navigation-list navigation-user">
        <li class="navigation-item">
-        <a href="#">
+        <a class="navigation-link" href="#">
+          <img src="images/icon-search.svg" alt="значок поиска">
           <span class="visually-hidden">Поиск</span></a>
         </li>
        <li class="navigation-item">
-        <a href="#"><span class="visually-hidden">Избранное</span></a>
+        <img src="images/favourite.png" alt="значок сердечко">
+          <img src="images/favourites-number.png" alt="число гостиниц в избранном">
+           <a class="navigation-link" href="#"><span class="visually-hidden">Избранное</span></a>
         </li>
        <li class="navigation-item">
-        <a href="#">Хочу сюда!</a>
+        <a class ="navigation-link link-to-catalog" href="catalog.html">Хочу сюда!</a>
         </li>
       </ul>
     </nav>
   </header>
     
-<main class="main-inner">
-  <header class="inner-header">
-    <h1 class="inner-header-title">Гостиницы Седоны</h1>
-     <ul class="breadcrumbs">
+  <main class="main-inner">
+   <div class="inner-filters-list">
+    <header class="inner-header">
+     <h1 class="inner-header-title">Гостиницы Седоны</h1>
+      <ul class="breadcrumbs">
     
-      <li class="breadcrumbs-item">
+       <li class="breadcrumbs-item">
         <a class="button" href="index.html">
           <span class="visually-hidden">На главную</span>
         </a>
-      </li>
-      <li class="breadcrumbs-item">
+       </li>
+       <li class="breadcrumbs-item">
         <a class="breadcrumbs-item-link">Гостиницы</a>
-      </li>
+       </li>
      </ul>
    </header>
-
-   <section class="catalog-hotels">
+<!-- Не смогла разобраться как поместить фоновую картинку под фильтрами-->
+   <div class="catalog-hotels-filters">
     <h2 class="visually-hidden">Список гостиниц с фильтрами</h2>
+
      <form class="catalog-filter" action="https://echo.htmlacademy.ru/" method="get">
       <fieldset class="catalog-filter-group">
         <legend class="catalog-filter-title">Инфраструктура</legend>
@@ -79,18 +85,18 @@
          </ul>
        </fieldset>
 
-      <fieldset class="catalog-filter-group">
-       <legend class="catalog-filter-title">Тип жилья</legend>
-        <ul class="catalog-filter-list">
-         <li class="catalog-filter-item">
-          <label class="control">
+       <fieldset class="catalog-filter-group">
+        <legend class="catalog-filter-title">Тип жилья</legend>
+         <ul class="catalog-filter-list">
+          <li class="catalog-filter-item">
+           <label class="control">
             <input class="control-input" type="radio" name="rooms-type" value="hotel" checked>
 
         Гостиница
-           </label>
-          </li>
-         <li class="catalog-filter-item">
-          <label class="control">
+            </label>
+           </li>
+          <li class="catalog-filter-item">
+           <label class="control">
             <input class="control-input" type="radio" name="rooms-type" value="motel">
 
         Мотель
@@ -102,28 +108,33 @@
         Апартаменты
           </label>
          </li>
-       </ul>
-      </fieldset>
-
-      <button class="button" type="submit">Применить</button>
-      <button class="button-clear" type="submit">Сбросить</button>
+        </ul>
+       </fieldset>
+       <button class="button" type="submit">Применить</button>
+       <button class="button-clear" type="submit">Сбросить</button>
      </form>
-    <p>Найдено гостиниц: 38</p>
+    </div>
+  </div>
+
+   <section class="catalog-hotels">
+    <p class="search-results">Найдено гостиниц: 38</p>
      <select class="select-control" aria-label="Сортировка">
       <option value="popular">Сначала популярные</option>
       <option value="cheap">Сначала дешёвые</option>
       <option value="expensive">Сначала дорогие</option>
       </select>
     
-    <a class="button button-current" href="#">
+     <a class="button button-current" href="#">
       <span class="visually-hidden">Показать карточки плиткой</span>
-    </a>
-    <a class="button" href="#">
+      </a>
+     <a class="button" href="#">
       <span class="visually-hidden">Показать карточки отдельными слайдами</span>
-    </a>
-    <a href="#" class="button">
+      </a>
+     <a href="#" class="button">
       <span class="visually-hidden">Показать карточки списком</span>
-    </a>
+     </a>
+  
+
      <ul class="hotels-list">
       <li class="hotels-item">
         <a class="hotels-item-link">
@@ -142,15 +153,15 @@
               </a>
              </td>
             <td>
-              <button class="button" type="submit">В избранное</button>
+              <button class="button button-add-to-favourite" type="submit">В избранное</button>
             </td>
           </tr>
           <tr>
             <td>
-              <img src="images/star rate.svg" class="star" alt="звезда">
-              <img src="images/star rate.svg" class="star" alt="звезда">
-              <img src="images/star rate.svg" class="star" alt="звезда">
-              <img src="images/star rate.svg" class="star" alt="звезда">
+              <img src="images/star-rate.svg" class="star" alt="звезда">
+              <img src="images/star-rate.svg" class="star" alt="звезда">
+              <img src="images/star-rate.svg" class="star" alt="звезда">
+              <img src="images/star-rate.svg" class="star" alt="звезда">
              </td>
             <td><span class="rate-level">Рейтинг: 8,5</span></td>
            </tr>
@@ -158,7 +169,7 @@
        </li>
       <li class="hotels-item">
         <a class="hotel-item-link">
-         <img src="images/villas at poco.jpg" alt="Villas at Poco Diablo" width="300" height="211">
+         <img src="images/villas-at-poco.jpg" alt="Villas at Poco Diablo" width="300" height="211">
          </a>
         <table>
           <caption><h3 class="hotel-item-title">Villas at Poco Diablo</h3></caption>
@@ -173,15 +184,15 @@
               </a>
             </td>
             <td>
-                <button class="button" type="submit">В избранном</button>
+                <button class="button button-added-to-favourite" type="submit">В избранном</button>
             </td>
            </tr>
           <tr>
             <td>
-              <img src="images/star rate.svg" class="star" alt="звезда">
-              <img src="images/star rate.svg" class="star" alt="звезда">
-              <img src="images/star rate.svg" class="star" alt="звезда">
-              <img src="images/star rate.svg" class="star" alt="звезда">
+              <img src="images/star-rate.svg" class="star" alt="звезда">
+              <img src="images/star-rate.svg" class="star" alt="звезда">
+              <img src="images/star-rate.svg" class="star" alt="звезда">
+              <img src="images/star-rate.svg" class="star" alt="звезда">
              </td>
             <td>
               <span class="rate-level">Рейтинг: 9,2</span></td>
@@ -205,14 +216,14 @@
               </a>
             </td>
             <td>
-                <button class="button" type="submit">В избранное</button>
+                <button class="button button-add-to-favourite" type="submit">В избранное</button>
             </td>
           </tr>
           <tr>
             <td>
-              <img src="images/star rate.svg" class="star" alt="звезда">
-              <img src="images/star rate.svg" class="star" alt="звезда">
-              <img src="images/star rate.svg" class="star" alt="звезда">
+              <img src="images/star-rate.svg" class="star" alt="звезда">
+              <img src="images/star-rate.svg" class="star" alt="звезда">
+              <img src="images/star-rate.svg" class="star" alt="звезда">
              </td>
             <td>
               <span class="rate-level">Рейтинг: 6,9</span></td>
@@ -236,13 +247,13 @@
               </a>
             </td>
             <td>
-              <button class="button" type="submit">В избранное</button>
+              <button class="button button-add-to-favourite" type="submit">В избранное</button>
              </td>
             </tr>
            <tr>
             <td>
-              <img src="images/star rate.svg" class="star" alt="звезда">
-              <img src="images/star rate.svg" class="star" alt="звезда">
+              <img src="images/star-rate.svg" class="star" alt="звезда">
+              <img src="images/star-rate.svg" class="star" alt="звезда">
             </td>
             <td>
               <span class="rate-level">Рейтинг: 5,0</span></td>
